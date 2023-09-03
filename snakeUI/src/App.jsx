@@ -76,15 +76,10 @@ class Game {
 
     update_next() {
         const { x, y, w, h } = this.snakeList[0];
-        this.snakeList.unshift(
-            new Snake(
-                x + this.current_direction.x,
-                y + this.current_direction.y,
-                w,
-                h
-            )
-        );
-        this.snakeList.pop();
+        const last = this.snakeList.pop();
+        last.x = x + this.current_direction.x;
+        last.y = y + this.current_direction.y;
+        this.snakeList.unshift(last);
     }
 
     draw(timestamp) {
@@ -144,6 +139,7 @@ function App() {
         const canvas = canref.current;
         const ctx = canvas.getContext('2d');
         ctx.globalCompositeOperation = 'destination-over';
+        ctx.shadowBlur = 50;
         const start_snake = new Snake(0, 5, 20, 20);
         const second_snake = new Snake(20, 5, 20, 20);
         const third_snake = new Snake(40, 5, 20, 20);

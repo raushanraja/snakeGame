@@ -1,0 +1,16 @@
+body {
+    background-color: navy;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    display: grid;
+}
+
+.canvas{
+    display: grid;
+    place-content: center;
+}
+
+#canvas{
+    background-color: peru;
+}
+

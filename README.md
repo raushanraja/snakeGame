@@ -1,1 +1,3 @@
 # snakeGame
+
+- Learnging HTML Canvas
